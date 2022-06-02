@@ -1,6 +1,6 @@
 package kafkatutorial.controller;
 
-import kafkatutorial.model.Message;
+import kafkatutorial.model.SimpleStringMessage;
 import kafkatutorial.service.SpringProducer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
  * Offers a POST operation to publish the content of the provided message object to Kafka.
  */
 @RestController
-@RequestMapping(value = "/spring/kafka")
+@RequestMapping(value = "/kafka")
 public class KafkaProducerController {
     private static final Logger logger = LoggerFactory.getLogger(KafkaProducerController.class);
     private final SpringProducer producer;
@@ -21,8 +21,8 @@ public class KafkaProducerController {
     }
 
     @PostMapping(value = "/publish")
-    public void sendMessageToKafkaTopicWithSpring(@RequestBody Message message) {
-        logger.info("Producing Kafka message -> " + message.getMessageText());
+    public void sendSimpleStringMessageToKafkaTopic(@RequestBody SimpleStringMessage message) {
+        logger.info("Producing simple String Kafka message -> " + message.getMessageText());
         this.producer.sendMessage(message.getMessageText());
     }
 }

@@ -1,4 +1,4 @@
-# Kafka example with Spring Boot and Camel
+# Kafka example with Spring Boot
 
 ## Prerequisites
 
@@ -15,14 +15,9 @@ Run the console-consumer on topic test: `bin\windows\kafka-console-consumer.bat 
 
 ## Example
 
-### Camel 
-
-- KafkaProducerRoute (Kafka Message producer - `http://localhost:8080/spring/kafka/publish`)
-- LoggingConsumerRoute - Consume Kafka message and log 
-
 ### Spring Boot
 
-- KafkaProducerController (Kafka Message producer) - `http://localhost:8080/camel/kafka/publish`
+- KafkaProducerController (Kafka Message producer) - `http://localhost:8080/spring/kafka/publish`
 - SpringLoggingConsumer - Consume Kafka message and log
 
 Message body for publishing a message:
@@ -42,7 +37,3 @@ Message body for publishing a message:
 
 ### Spring Boot
 * [Creating a Spring Boot Application for Kafka](https://www.confluent.io/blog/apache-kafka-spring-boot-application/#one)
-
-### Camel 
-* [Camel documentation: Kafka in Camel](https://camel.apache.org/components/3.11.x/kafka-component.html)
-* [Example Camel integration with Kafka](https://dzone.com/articles/apache-camel-integration-with-kafka)

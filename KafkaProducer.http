@@ -1,15 +1,8 @@
 ###
-POST http://localhost:8080/spring/kafka/publish
+POST http://localhost:8080/kafka/publish
 Content-Type: application/json
 
 {
-  "messageText": "Message sent over spring"
+  "messageText": "Kafka message published over a REST service"
 }
 
-###
-POST http://localhost:8080/camel/kafka/publish
-Content-Type: application/json
-
-{
-  "messageText": "Another message sent over camel route"
-}
